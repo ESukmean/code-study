@@ -1,7 +1,7 @@
 import { fail, redirect } from '@sveltejs/kit';
 
 async function loadProblemInfo(pno) {
-	return await fetch(`http://kr-1-ts.esukmean.com:20242/problem/${pno}`).then((f) => f.json());
+	return await fetch(`http://code-study-api/problem/${pno}`).then((f) => f.json());
 }
 
 export async function load({ params, cookies }) {
@@ -29,7 +29,7 @@ export const actions = {
 			formBody.push(encodedKey + '=' + encodedValue);
 		}
 
-		await fetch(`http://kr-1-ts.esukmean.com:20242/problem/${problem_no}/`, {
+		await fetch(`http://code-study-api/problem/${problem_no}/`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
