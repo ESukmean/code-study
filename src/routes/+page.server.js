@@ -1,11 +1,11 @@
 var problems = undefined;
 async function loadAndPrefetchProblem() {
-	problems = await fetch('http://code-study-api.web:5000/problem/').then((f) => f.json());
+	problems = await fetch('http://code-study-api.kr-1-ts.esukmean.com/problem/').then((f) => f.json());
 
 	return problems;
 }
 async function loadSubmit() {
-	let list = await fetch(`http://code-study-api.web:5000/problem/submitted`).then((f) =>
+	let list = await fetch(`http://code-study-api.kr-1-ts.esukmean.com/problem/submitted`).then((f) =>
 		f.json()
 	);
 	let toReturn = {};
